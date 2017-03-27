@@ -43,7 +43,7 @@ namespace Redux.DevTools.WPF
 
         private void SubscribeToTimeMachineStore()
         {
-            _storeSubscription = TimeMachineStore.Subscribe(OnStateChange);
+            //_storeSubscription = TimeMachineStore.Subscribe(OnStateChange);
         }
 
         private void OnStateChange(TimeMachineState state)

@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Immutable;
 using System.Linq;
-using System.Reactive.Linq;
 
 namespace Redux.DevTools
 {
     public class TimeMachineReducer
     {
-        private Func<object, IAction, object> _reducer;
+        private Func<object, object, object> _reducer;
 
-        public TimeMachineReducer(Func<object, IAction, object> reducer)
+        public TimeMachineReducer(Func<object, object, object> reducer)
         {
             _reducer = reducer;
         }
 
-        public TimeMachineState Execute(TimeMachineState previousState, IAction action)
+        public TimeMachineState Execute(TimeMachineState previousState, object action)
         {
             if(action is ResumeTimeMachineAction)
             {
